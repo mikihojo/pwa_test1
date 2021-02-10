@@ -27,7 +27,8 @@ self.addEventListener('fetch', function(event) {
         caches
             .match(event.request)
             .then(function(response) {
-                return response ? response : fetch(event.request);
+                //return response ? response : fetch(event.request);
+                return new Response('Hello from your friendly neighbourhood service worker!');
             })
     );
 });
